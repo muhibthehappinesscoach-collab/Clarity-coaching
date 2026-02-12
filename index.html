@@ -3,291 +3,366 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Clarity Coaching | Muhibullah Sahibjan</title>
+<title>Clarity Coaching | Muhib The Happiness Coach</title>
 
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
-<!-- Calendly Script -->
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-html {
-  scroll-behavior: smooth;
+
+/* ----------------- GLOBAL STYLES ----------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
   font-family: 'Inter', sans-serif;
-  background-color: #fdfaf7;
-  color: #2b2b2b;
+  background-color: #ffffff;
+  color: #1c1c1c;
   line-height: 1.7;
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 90%;
+  max-width: 1150px;
+  margin: auto;
+}
+
+section {
+  padding: 90px 0;
 }
 
 h1, h2, h3 {
   font-family: 'Playfair Display', serif;
   font-weight: 600;
-  color: #1f1f1f;
 }
 
-.container {
-  width: 90%;
-  max-width: 1100px;
-  margin: auto;
-  padding: 80px 0;
+h1 {
+  font-size: 3.2rem;
+  line-height: 1.2;
 }
 
-/* NAVBAR */
+h2 {
+  font-size: 2.3rem;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.05rem;
+  color: #444;
+}
+
+/* ----------------- NAVBAR ----------------- */
+
 nav {
-  position: fixed;
   width: 100%;
-  background: rgba(253,250,247,0.95);
-  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #eee;
+  z-index: 999;
+}
+
+.nav-wrapper {
+  max-width: 1150px;
+  margin: auto;
+  padding: 18px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 8%;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-
-nav a {
-  text-decoration: none;
-  color: #333;
-  margin-left: 25px;
-  font-weight: 500;
-  font-size: 0.95rem;
-}
-
-nav a:hover {
-  color: #8c6f56;
 }
 
 .logo {
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
 }
 
-/* HERO */
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #1c1c1c;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #8c6f4e;
+}
+
+/* Mobile menu */
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 2px;
+  background: #000;
+  margin: 6px 0;
+  transition: 0.3s;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  right: 5%;
+  background: white;
+  padding: 20px;
+  border: 1px solid #eee;
+}
+
+.mobile-menu a {
+  text-decoration: none;
+  margin: 10px 0;
+  color: #1c1c1c;
+}
+
+/* ----------------- HERO ----------------- */
+
 .hero {
   padding-top: 140px;
   text-align: center;
 }
 
-.hero h1 {
-  font-size: 2.8rem;
-  max-width: 800px;
-  margin: auto;
-}
-
 .hero p {
-  max-width: 700px;
-  margin: 20px auto;
-  font-size: 1.1rem;
+  margin: 25px 0;
+  font-size: 1.2rem;
 }
 
-.btn {
+.cta-btn {
   display: inline-block;
-  margin-top: 30px;
-  padding: 14px 30px;
-  background: #8c6f56;
+  padding: 14px 28px;
+  background: #8c6f4e;
   color: white;
   text-decoration: none;
   border-radius: 30px;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
-.btn:hover {
-  background: #6f5542;
+.cta-btn:hover {
+  background: #6f563b;
 }
 
-/* SECTION */
-.section {
-  padding: 80px 0;
-}
+/* ----------------- ABOUT ----------------- */
 
-.alt {
-  background: #f4eee8;
-}
-
-/* ABOUT */
 .about {
   display: flex;
-  flex-wrap: wrap;
+  gap: 50px;
   align-items: center;
-  gap: 40px;
+  flex-wrap: wrap;
 }
 
 .about img {
-  width: 320px;
-  border-radius: 20px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+  width: 300px;
+  border-radius: 10px;
 }
 
 .about-text {
   flex: 1;
-  min-width: 280px;
 }
 
-/* TESTIMONIAL SLIDER */
-.testimonial-container {
+/* ----------------- BENEFITS ----------------- */
+
+.benefits {
+  background: #faf8f5;
+}
+
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  padding: 30px;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* ----------------- CTA SECTION ----------------- */
+
+.cta-section {
   text-align: center;
-  position: relative;
-  max-width: 700px;
-  margin: auto;
 }
 
-.testimonial {
-  display: none;
-  font-style: italic;
-  font-size: 1.1rem;
+/* ----------------- FOOTER ----------------- */
+
+footer {
+  text-align: center;
+  padding: 40px 0;
+  font-size: 0.9rem;
+  background: #f2f2f2;
 }
 
-.testimonial.active {
-  display: block;
-}
+/* ----------------- ANIMATIONS ----------------- */
 
-.testimonial-author {
-  margin-top: 15px;
-  font-weight: 500;
-  font-style: normal;
-}
-
-/* FADE-IN */
 .fade-in {
   opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease-out;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
 }
 
-.fade-in.visible {
+.fade-in.active {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2rem;
+/* ----------------- RESPONSIVE ----------------- */
+
+@media(max-width: 768px) {
+  h1 {
+    font-size: 2.3rem;
   }
 
-  nav {
-    flex-direction: column;
-    gap: 10px;
+  .nav-links {
+    display: none;
   }
 
-  .about {
-    flex-direction: column;
-    text-align: center;
+  .hamburger {
+    display: block;
   }
 }
+
 </style>
 </head>
-
 <body>
 
 <!-- NAVBAR -->
+
 <nav>
-  <div class="logo">Muhibullah Sahibjan</div>
-  <div>
-    <a href="#about">About</a>
-    <a href="#process">Process</a>
-    <a href="#testimonials">Testimonials</a>
-    <a href="#booking">Book</a>
+  <div class="nav-wrapper">
+    <div class="logo">Muhib The Happiness Coach</div>
+
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#benefits">What You Gain</a></li>
+      <li><a href="#contact">Apply</a></li>
+    </ul>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about">About</a>
+      <a href="#benefits">What You Gain</a>
+      <a href="#contact">Apply</a>
+    </div>
+
   </div>
 </nav>
 
 <!-- HERO -->
+
 <section class="hero container fade-in">
-  <h1>Clarity for High-Functioning Professionals Who Are Tired of Carrying It Alone</h1>
-  <p>You're competent. Capable. Responsible. Yet internally, something feels heavy.</p>
-  <p>This is structured clarity work for professionals who want calm thinking, clean decisions, and internal steadiness.</p>
-  <a href="#booking" class="btn">Book Your Clarity Call</a>
+  <h1>Clarity is not found.<br>It is created.</h1>
+  <p>For leaders, professionals and individuals who feel stuck, overwhelmed, or directionless.</p>
+  <a href="#contact" class="cta-btn">Book a Clarity Call</a>
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="section container about fade-in">
-  <img src="headshot.jpg" alt="Muhibullah Sahibjan Headshot">
+
+<section id="about" class="container about fade-in">
+  <img src="your-headshot.jpg" alt="Muhib Headshot">
   <div class="about-text">
-    <h2>About Muhibullah Sahibjan</h2>
-    <p>Master NLP & CBT Certified Coach specializing in stress and anxiety management for professionals.</p>
-    <p>I work with leaders and high performers who appear strong externally but feel internally stretched.</p>
-    <p>This is not about fixing you. It's about helping you see clearly — so you can choose consciously.</p>
+    <h2>Meet Muhib</h2>
+    <p>Master NLP & CBT Certified Coach specializing in stress, anxiety, leadership clarity and self-identity transformation.</p>
+    <p>This isn’t motivational talk. This is structured psychological work designed to help you see clearly, think accurately, and move decisively.</p>
   </div>
 </section>
 
-<!-- PROCESS -->
-<section id="process" class="section alt container fade-in">
-  <h2>The Clarity Process</h2>
-  <h3>1. Deconstruct the Pattern</h3>
-  <p>Identify the thinking structures creating stress.</p>
-  <h3>2. Reframe & Realign</h3>
-  <p>Shift distortions and align actions with values.</p>
-  <h3>3. Integrate & Stabilize</h3>
-  <p>Build internal steadiness as a default state.</p>
-</section>
+<!-- BENEFITS -->
 
-<!-- TESTIMONIALS -->
-<section id="testimonials" class="section container fade-in">
-  <h2 style="text-align:center;">What Clients Say</h2>
-  <div class="testimonial-container">
-    <div class="testimonial active">
-      "I didn't need motivation. I needed clarity. That changed everything."
-      <div class="testimonial-author">— Senior Manager</div>
-    </div>
-    <div class="testimonial">
-      "My anxiety wasn't random — it was patterned. Once I saw it, I could shift it."
-      <div class="testimonial-author">— Corporate Director</div>
+<section id="benefits" class="benefits fade-in">
+  <div class="container">
+    <h2>What You Gain</h2>
+    <div class="benefit-grid">
+      <div class="card">
+        <h3>Strategic Clarity</h3>
+        <p>Clear thinking that replaces confusion and emotional noise.</p>
+      </div>
+      <div class="card">
+        <h3>Emotional Regulation</h3>
+        <p>Tools to manage stress, anxiety, and reactive patterns.</p>
+      </div>
+      <div class="card">
+        <h3>Identity Alignment</h3>
+        <p>Confidence rooted in self-awareness — not external validation.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- BOOKING -->
-<section id="booking" class="section alt container fade-in">
-  <h2 style="text-align:center;">Book Your 30-Minute Clarity Call</h2>
-  <div class="calendly-inline-widget"
-    data-url="https://calendly.com/muhibthehappinesscoach/discovery-session"
-    style="min-width:320px;height:650px;">
-  </div>
+<!-- CTA -->
+
+<section id="contact" class="cta-section container fade-in">
+  <h2>Ready to Think Clearly?</h2>
+  <p>If you are serious about clarity, let’s begin.</p>
+  <a href="mailto:your@email.com" class="cta-btn">Apply for Coaching</a>
 </section>
 
-<!-- FOOTER -->
-<section class="section container" style="text-align:center; padding-bottom:40px;">
-  © 2026 Muhibullah Sahibjan | Clarity Coaching
-</section>
+<footer>
+  © 2026 Muhib The Happiness Coach | All Rights Reserved
+</footer>
 
 <script>
-// Fade In on Scroll
-const faders = document.querySelectorAll('.fade-in');
-const appearOptions = { threshold: 0.2 };
 
-const appearOnScroll = new IntersectionObserver(function(entries, observer){
+/* MOBILE MENU */
+function toggleMenu() {
+  var menu = document.getElementById("mobileMenu");
+  if (menu.style.display === "flex") {
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "flex";
+  }
+}
+
+/* SCROLL ANIMATION */
+const faders = document.querySelectorAll('.fade-in');
+
+const appearOptions = {
+  threshold: 0.2
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll){
   entries.forEach(entry => {
-    if(!entry.isIntersecting) return;
-    entry.target.classList.add('visible');
-    observer.unobserve(entry.target);
+    if (!entry.isIntersecting) {
+      return;
+    } else {
+      entry.target.classList.add('active');
+      appearOnScroll.unobserve(entry.target);
+    }
   });
 }, appearOptions);
 
-faders.forEach(fader => appearOnScroll.observe(fader));
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
 
-// Testimonial Auto Slider
-let currentSlide = 0;
-const slides = document.querySelectorAll('.testimonial');
-
-function showSlide(index){
-  slides.forEach(slide => slide.classList.remove('active'));
-  slides[index].classList.add('active');
-}
-
-setInterval(() => {
-  currentSlide = (currentSlide + 1) % slides.length;
-  showSlide(currentSlide);
-}, 5000);
 </script>
 
 </body>
 </html>
-
-
-
