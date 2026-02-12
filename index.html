@@ -23,12 +23,14 @@
         .nav-links a { text-decoration: none; color: #333; margin-left: 20px; font-weight: 600; transition: 0.3s; }
         .nav-links a:hover { color: #27ae60; }
 
-        /* --- Hero Section --- */
         section { padding: 80px 0; }
+        .highlight { color: #27ae60; font-weight: bold; }
+
+        /* --- Hero Section --- */
         .hero {
             background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), 
                         url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1400&q=80');
-            background-size: cover; background-position: center; height: 75vh;
+            background-size: cover; background-position: center; height: 65vh;
             display: flex; align-items: center; text-align: center;
         }
         .hero h1 { font-size: 3.5rem; margin-bottom: 15px; letter-spacing: -1px; }
@@ -38,68 +40,38 @@
             padding: 16px 40px; border-radius: 50px; font-weight: bold; cursor: pointer;
             font-size: 1.1rem; transition: 0.3s; text-decoration: none; box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
         }
-        .cta-button:hover { background: #219150; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4); }
+        .cta-button:hover { background: #219150; transform: translateY(-2px); }
 
-        /* --- About Section --- */
-        .about-flex { display: flex; align-items: center; gap: 60px; flex-wrap: wrap; }
-        .about-image { flex: 1; min-width: 300px; }
-        .about-image img { width: 100%; max-width: 450px; border-radius: 20px; box-shadow: 30px 30px 0px #f0f4f8; }
-        .about-text { flex: 1.2; min-width: 300px; }
-        .about-text h2 { font-size: 2.5rem; margin-bottom: 20px; }
-        .highlight { color: #27ae60; font-weight: bold; }
+        /* --- Book Feature --- */
+        .book-section { background: #f0f4f8; border-bottom: 1px solid #e0e6ed; }
+        .book-flex { display: flex; align-items: center; gap: 50px; flex-wrap: wrap; }
+        .book-cover { flex: 1; text-align: center; min-width: 300px; }
+        .book-cover img { max-width: 280px; border-radius: 8px; box-shadow: 15px 15px 40px rgba(0,0,0,0.15); }
+        .book-info { flex: 1.5; min-width: 300px; }
 
-        /* --- Framework Section --- */
-        #framework { background: #fdfdfd; text-align: center; }
-        #framework h2 { font-size: 2.5rem; margin-bottom: 40px; }
-        .framework-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); 
-            gap: 20px; 
-            margin-top: 40px; 
+        /* --- Articles Grid --- */
+        .articles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 40px; }
+        .article-card { 
+            padding: 30px; background: #fff; border: 1px solid #eee; border-radius: 12px; 
+            text-decoration: none; color: inherit; transition: 0.3s; display: block;
         }
-        .framework-step { 
-            padding: 35px 25px; 
-            background: #fff; 
-            border: 1px solid #eee; 
-            border-radius: 12px; 
-            transition: 0.3s; 
-            position: relative;
-        }
-        .framework-step:hover { border-color: #27ae60; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        .framework-step h3 { color: #27ae60; margin-bottom: 15px; font-size: 1.3rem; }
-        .framework-step p { font-size: 0.95rem; color: #666; }
+        .article-card:hover { border-color: #27ae60; transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        .tag { font-size: 0.75rem; font-weight: 700; color: #27ae60; text-transform: uppercase; margin-bottom: 10px; display: block; }
 
-        /* --- Testimonial Slider --- */
-        .testimonials { background: #2c3e50; color: white; text-align: center; padding: 100px 0; }
-        .slider-container { position: relative; max-width: 800px; margin: 0 auto; height: 180px; }
-        .testimonial-slide { display: none; padding: 20px; animation: fadeIn 0.8s; }
-        .testimonial-slide.active { display: block; }
-        .testimonial-slide blockquote { font-style: italic; font-size: 1.6rem; margin-bottom: 20px; }
+        /* --- Framework & Others --- */
+        .framework-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; margin-top: 40px; }
+        .framework-step { padding: 30px; border: 1px solid #eee; border-radius: 12px; text-align: center; background: #fff; }
         
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .testimonials { background: #2c3e50; color: white; text-align: center; }
+        .testimonial-slide { display: none; animation: fadeIn 0.8s; }
+        .testimonial-slide.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        /* --- Authority Section --- */
-        .authority {
-            background: #fff;
-            padding: 50px 20px;
-            text-align: center;
-            border-top: 1px solid #eee;
-            border-bottom: 1px solid #eee;
-            color: #555;
-            font-size: 0.95rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-
-        /* --- Footer CTA --- */
-        .footer-cta { background: #f0f4f8; text-align: center; padding: 100px 20px; }
+        .authority { background: #fff; padding: 40px 20px; text-align: center; border-top: 1px solid #eee; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #777; font-size: 0.9rem; }
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
-            .about-flex { flex-direction: column-reverse; text-align: center; }
-            .authority { font-size: 0.8rem; line-height: 2.2; }
-            .slider-container { height: 250px; }
+            .book-flex { text-align: center; }
         }
     </style>
 </head>
@@ -107,11 +79,11 @@
 
     <nav>
         <div class="container nav-content">
-            <div style="font-weight: 700; font-size: 1.4rem; color: #27ae60; letter-spacing: -1px;">CLARITY.</div>
+            <div style="font-weight: 700; font-size: 1.4rem; color: #27ae60;">CLARITY.</div>
             <div class="nav-links">
-                <a href="#">Home</a>
+                <a href="#book">The Book</a>
+                <a href="#articles">Insights</a>
                 <a href="#about">About</a>
-                <a href="#framework">The Framework</a>
                 <a href="#" onclick="openCalendly(); return false;">Book Now</a>
             </div>
         </div>
@@ -119,48 +91,61 @@
 
     <header class="hero">
         <div class="container">
-            <h1>Find Your Focus.</h1>
-            <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px;">Actionable coaching to help you find focus in a world full of noise.</p>
-            <button onclick="openCalendly()" class="cta-button">Book Your FREE Session</button>
+            <h1>Book Your FREE Session</h1>
+            <p style="font-size: 1.2rem; margin: 20px 0 30px;">Actionable psychology-driven coaching to find your focus.</p>
+            <button onclick="openCalendly()" class="cta-button">Start Your Journey Today</button>
         </div>
     </header>
 
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="about-flex">
-                <div class="about-image">
-                    <img src="https://via.placeholder.com/450x550" alt="Muhib - Happiness Coach">
-                </div>
-                <div class="about-text">
-                    <h2>Meet <span class="highlight">Muhib</span></h2>
-                    <p>Master NLP & CBT Certified Coach specializing in <strong>stress, anxiety, leadership clarity, and identity restructuring.</strong></p>
-                    <p>I help individuals strip away the clutter of expectations and refocus on what truly brings them fulfillment. This is not motivational speaking; this is structured psychological intervention designed for high-functioning individuals.</p>
-                    <p>Whether you're stuck in your career or looking for personal peace, I'm here to guide you back to your most authentic self.</p>
-                </div>
+    <section id="book" class="book-section">
+        <div class="container book-flex">
+            <div class="book-cover">
+                <img src="https://m.media-amazon.com/images/I/71-u6z9Y8kL._SY522_.jpg" alt="The Path to Clarity Book">
+            </div>
+            <div class="book-info">
+                <span class="tag">Author Spotlight</span>
+                <h2 style="font-size: 2.5rem; margin: 10px 0;">The Path to Clarity</h2>
+                <p>In my latest book, I share the exact frameworks used to help individuals navigate the fog of modern life. Discover the science and magic of happiness coaching.</p>
+                <br>
+                <a href="https://www.amazon.com/dp/B0GD7T3GQV" target="_blank" class="cta-button" style="background: #e67e22;">View on Amazon</a>
             </div>
         </div>
     </section>
 
-    <section id="framework">
+    <section id="articles" style="background: #fdfdfd;">
         <div class="container">
-            <h2>The Clarity Framework</h2>
-            <p style="margin-top: -30px; margin-bottom: 40px; color: #666;">A science-backed roadmap to internal congruence.</p>
-            <div class="framework-grid">
-                <div class="framework-step">
-                    <h3>1. Disrupt Mental Noise</h3>
-                    <p>Identify emotional distortions and reactive patterns clouding your professional and personal judgment.</p>
+            <h2 style="text-align: center;">Featured Insights</h2>
+            <p style="text-align: center; color: #666;">Explore my collection of articles on Medium and LinkedIn.</p>
+            
+            <div class="articles-grid">
+                <a href="https://medium.com/@motherhollywood" class="article-card" target="_blank">
+                    <span class="tag">Medium</span>
+                    <h3>The Science of Sustainable Joy</h3>
+                    <p>Why happiness is a skill you can practice, not just a feeling you chase.</p>
+                </a>
+                <a href="https://www.linkedin.com/in/YOUR_LINKEDIN_PROFILE/overlay/articles/" class="article-card" target="_blank">
+                    <span class="tag">LinkedIn</span>
+                    <h3>Leadership in High-Stress Environments</h3>
+                    <p>Managing cognitive distortions and maintaining clarity under pressure.</p>
+                </a>
+                <a href="https://medium.com/@motherhollywood" class="article-card" target="_blank">
+                    <span class="tag">Medium</span>
+                    <h3>Identity & Re-alignment</h3>
+                    <p>How to shed old reactive patterns and build a grounded self-image.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px;">
+                    <img src="https://via.placeholder.com/450x550" style="width:100%; border-radius: 20px; box-shadow: 20px 20px 0 #f0f4f8;">
                 </div>
-                <div class="framework-step">
-                    <h3>2. Cognitive Precision</h3>
-                    <p>Replace paralyzing overthinking with structured psychological accuracy and emotional stability.</p>
-                </div>
-                <div class="framework-step">
-                    <h3>3. Identity Realignment</h3>
-                    <p>Clarify who you are becoming—restructuring your self-image to match your highest ambitions.</p>
-                </div>
-                <div class="framework-step">
-                    <h3>4. Strategic Action</h3>
-                    <p>Move decisively with internal congruence, executing your goals without the weight of burnout.</p>
+                <div style="flex: 1.2; min-width: 300px;">
+                    <h2>Meet <span class="highlight">Muhib</span></h2>
+                    <p>Master NLP & CBT Certified Coach. My work is not just about motivation—it is structured psychological intervention designed to help you reclaim your internal congruence.</p>
                 </div>
             </div>
         </div>
@@ -168,18 +153,14 @@
 
     <section class="testimonials">
         <div class="container">
-            <div class="slider-container" id="testimonial-slider">
+            <div id="testimonial-slider" style="height: 150px;">
                 <div class="testimonial-slide active">
                     <blockquote>"Muhib helped me see my path clearly for the first time in years."</blockquote>
                     <p>— Sarah J.</p>
                 </div>
                 <div class="testimonial-slide">
-                    <blockquote>"The coaching sessions are the highlight of my week. Transformative."</blockquote>
+                    <blockquote>"A transformational approach to mental well-being."</blockquote>
                     <p>— David L.</p>
-                </div>
-                <div class="testimonial-slide">
-                    <blockquote>"I finally feel like I have control over my own happiness."</blockquote>
-                    <p>— Anna K.</p>
                 </div>
             </div>
         </div>
@@ -187,30 +168,26 @@
 
     <section class="authority">
         <div class="container">
-            Certified NLP Practitioner • CBT-Based Coaching • Leadership Development • Emotional Intelligence Training
+            NLP Master Practitioner • CBT Specialist • Leadership Development • Emotional Intelligence
         </div>
     </section>
 
-    <section class="footer-cta">
+    <section style="text-align: center; background: #f0f4f8; padding: 100px 20px;">
         <div class="container">
-            <h2 style="font-size: 2.2rem;">Ready to reclaim your clarity?</h2>
-            <p style="margin: 20px 0 35px; font-size: 1.1rem; color: #555;">Schedule your 30-minute discovery call today.</p>
+            <h2>Ready to find your clarity?</h2>
+            <br>
             <button onclick="openCalendly()" class="cta-button">Check My Availability</button>
         </div>
     </section>
 
-    <footer style="padding: 40px; text-align: center; color: #999; font-size: 0.9rem;">
-        &copy; 2026 Muhib The Happiness Coach. All rights reserved.
-    </footer>
+    <footer style="padding: 40px; text-align: center; color: #aaa; font-size: 0.9rem;">&copy; 2026 Muhib The Happiness Coach.</footer>
 
     <script>
-        // CALENDLY INTEGRATION
         function openCalendly() {
             Calendly.initPopupWidget({ url: 'https://calendly.com/muhibthehappinesscoach/discovery-session' });
             return false;
         }
 
-        // TESTIMONIAL SLIDER LOGIC
         let currentSlide = 0;
         const slides = document.querySelectorAll('.testimonial-slide');
         function showNextSlide() {
