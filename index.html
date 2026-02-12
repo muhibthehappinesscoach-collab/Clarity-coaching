@@ -40,38 +40,48 @@
         }
         .cta-button:hover { background: #219150; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4); }
 
+        /* --- About Section --- */
+        .about-flex { display: flex; align-items: center; gap: 60px; flex-wrap: wrap; }
+        .about-image { flex: 1; min-width: 300px; }
+        .about-image img { width: 100%; max-width: 450px; border-radius: 20px; box-shadow: 30px 30px 0px #f0f4f8; }
+        .about-text { flex: 1.2; min-width: 300px; }
+        .highlight { color: #27ae60; font-weight: bold; }
+
         /* --- Services Section --- */
         #services { background: #f9f9f9; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
-        .card { padding: 40px; background: #fff; border-radius: 15px; border-bottom: 5px solid #27ae60; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .card h3 { margin-bottom: 15px; color: #27ae60; }
-
-        /* --- ABOUT SECTION (The Human Touch) --- */
-        .about-section { background: #fff; }
-        .about-flex { display: flex; align-items: center; gap: 60px; flex-wrap: wrap; }
-        .about-image { flex: 1; min-width: 300px; position: relative; }
-        .about-image img { width: 100%; max-width: 450px; border-radius: 20px; box-shadow: 30px 30px 0px #f0f4f8; }
-        .about-text { flex: 1.2; min-width: 300px; }
-        .about-text h2 { font-size: 2.5rem; margin-bottom: 20px; }
-        .highlight { color: #27ae60; font-weight: bold; }
+        .card { padding: 40px; background: #fff; border-radius: 15px; border-bottom: 5px solid #27ae60; text-align: center; }
 
         /* --- Testimonial Slider --- */
         .testimonials { background: #2c3e50; color: white; text-align: center; padding: 100px 0; }
         .slider-container { position: relative; max-width: 800px; margin: 0 auto; height: 180px; }
         .testimonial-slide { display: none; padding: 20px; animation: fadeIn 0.8s; }
         .testimonial-slide.active { display: block; }
-        .testimonial-slide blockquote { font-style: italic; font-size: 1.6rem; margin-bottom: 20px; line-height: 1.4; }
+        .testimonial-slide blockquote { font-style: italic; font-size: 1.6rem; margin-bottom: 20px; }
         
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* --- Authority Section --- */
+        .authority {
+            background: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            color: #555;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
 
         /* --- Footer CTA --- */
         .footer-cta { background: #f0f4f8; text-align: center; padding: 80px 20px; }
 
-        /* --- Responsive --- */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
             .about-flex { flex-direction: column-reverse; text-align: center; }
-            .about-image img { box-shadow: 15px 15px 0px #f0f4f8; }
+            .authority { font-size: 0.8rem; line-height: 2; }
         }
     </style>
 </head>
@@ -79,7 +89,7 @@
 
     <nav>
         <div class="container nav-content">
-            <div style="font-weight: 700; font-size: 1.4rem; color: #27ae60; letter-spacing: -1px;">CLARITY.</div>
+            <div style="font-weight: 700; font-size: 1.4rem; color: #27ae60;">CLARITY.</div>
             <div class="nav-links">
                 <a href="#">Home</a>
                 <a href="#about">About</a>
@@ -91,7 +101,7 @@
 
     <header class="hero">
         <div class="container">
-            <h1>Reclaim Your Happiness.</h1>
+            <h1>Book Your FREE Session</h1>
             <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px;">Actionable coaching to help you find focus in a world full of noise.</p>
             <button onclick="openCalendly()" class="cta-button">Start Your Journey Today</button>
         </div>
@@ -105,9 +115,8 @@
                 </div>
                 <div class="about-text">
                     <h2>Meet <span class="highlight">Muhib</span></h2>
-                    <p>I believe that happiness isn't a destination—it's a skill that can be practiced. My journey into coaching began with a simple question: <strong>"How do we find clarity when life feels overwhelming?"</strong></p>
-                    <p>Today, I help individuals strip away the clutter of expectations and refocus on what truly brings them fulfillment. Whether you're stuck in your career or looking for personal peace, I'm here to guide you back to yourself.</p>
-                    <p><em>Let's find your version of happiness together.</em></p>
+                    <p>I help individuals strip away the clutter of expectations and refocus on what truly brings them fulfillment.</p>
+                    <p>Whether you're stuck in your career or looking for personal peace, I'm here to guide you back to yourself.</p>
                 </div>
             </div>
         </div>
@@ -115,20 +124,11 @@
 
     <section id="services">
         <div class="container">
-            <h2 style="text-align:center; font-size: 2.2rem;">How We Work Together</h2>
+            <h2 style="text-align:center;">How We Work Together</h2>
             <div class="grid">
-                <div class="card">
-                    <h3>Clarity Audit</h3>
-                    <p>A deep dive into your current daily life to identify what's draining your energy and what's fueling it.</p>
-                </div>
-                <div class="card">
-                    <h3>Action Blueprint</h3>
-                    <p>We don't just talk; we build a step-by-step roadmap to get you from "stuck" to "inspired."</p>
-                </div>
-                <div class="card">
-                    <h3>Mindset Shifts</h3>
-                    <p>Learn the psychological tools needed to handle stress and maintain your happiness long-term.</p>
-                </div>
+                <div class="card"><h3>Clarity Audit</h3><p>Identify energy drains and core values.</p></div>
+                <div class="card"><h3>Action Blueprint</h3><p>A step-by-step roadmap to your goals.</p></div>
+                <div class="card"><h3>Mindset Shifts</h3><p>Tools to handle stress and maintain joy.</p></div>
             </div>
         </div>
     </section>
@@ -137,52 +137,50 @@
         <div class="container">
             <div class="slider-container" id="testimonial-slider">
                 <div class="testimonial-slide active">
-                    <blockquote>"Muhib helped me see my path clearly for the first time in years. The fog is finally gone."</blockquote>
-                    <p>— Sarah J., Project Manager</p>
+                    <blockquote>"Muhib helped me see my path clearly for the first time in years."</blockquote>
+                    <p>— Sarah J.</p>
                 </div>
                 <div class="testimonial-slide">
-                    <blockquote>"I went from feeling burnt out to feeling genuinely excited for Monday mornings. Thank you!"</blockquote>
-                    <p>— David L., Entrepreneur</p>
-                </div>
-                <div class="testimonial-slide">
-                    <blockquote>"A truly empathetic and professional coach. The results were immediate."</blockquote>
-                    <p>— Anna K., Artist</p>
+                    <blockquote>"I finally feel like I have control over my own happiness."</blockquote>
+                    <p>— David L.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <section class="authority">
+        <div class="container">
+            Certified NLP Practitioner • CBT-Based Coaching • Leadership Development • Emotional Intelligence Training
+        </div>
+    </section>
+
     <section class="footer-cta">
         <div class="container">
-            <h2>Ready for a change?</h2>
-            <p style="margin: 20px 0 35px; font-size: 1.1rem;">Schedule a 30-minute discovery call. No pressure, just clarity.</p>
+            <h2>Book Your FREE Session</h2>
+            <p style="margin: 20px 0 35px;">Schedule a 30-minute discovery call.</p>
             <button onclick="openCalendly()" class="cta-button">Check My Availability</button>
         </div>
     </section>
 
-    <footer style="padding: 40px; text-align: center; font-size: 0.9rem; color: #777; border-top: 1px solid #eee;">
-        &copy; 2026 Muhib The Happiness Coach. All rights reserved.
+    <footer style="padding: 40px; text-align: center; color: #777;">
+        &copy; 2026 Muhib The Happiness Coach.
     </footer>
 
     <script>
-        // 1. CALENDLY FUNCTION
-        // Replace 'YOUR_LINK' with your actual Calendly URL (e.g., 'muhib-happiness/30min')
         function openCalendly() {
+            // REMEMBER TO CHANGE THIS TO YOUR LINK
             Calendly.initPopupWidget({ url: 'https://calendly.com/muhibthehappinesscoach/discovery-session' });
             return false;
         }
 
-        // 2. TESTIMONIAL SLIDER SCRIPT
         let currentSlide = 0;
         const slides = document.querySelectorAll('.testimonial-slide');
-
         function showNextSlide() {
             slides[currentSlide].classList.remove('active');
             currentSlide = (currentSlide + 1) % slides.length;
             slides[currentSlide].classList.add('active');
         }
-
-        setInterval(showNextSlide, 4500); // Transitions every 4.5 seconds
+        setInterval(showNextSlide, 4500);
     </script>
 </body>
 </html>
