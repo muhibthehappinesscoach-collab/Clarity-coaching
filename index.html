@@ -1,371 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Clarity Coaching | Muhib</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clarity Coaching | Muhib the Happiness Coach</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- General Styles --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; background: #fdfdfd; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        section { padding: 80px 0; }
+        h1, h2 { margin-bottom: 20px; color: #2c3e50; }
+        p { margin-bottom: 20px; font-size: 1.1rem; }
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), 
+                        url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1400&q=80'); /* Replace with your own background image */
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+        .hero h1 { font-size: 3.5rem; font-weight: 700; }
+        .cta-button {
+            display: inline-block;
+            background: #27ae60;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .cta-button:hover { background: #219150; transform: translateY(-2px); }
 
-<style>
+        /* --- Features/Services Section --- */
+        .services { background: #fff; text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
+        .card { padding: 30px; background: #f9f9f9; border-radius: 10px; border-bottom: 4px solid #27ae60; }
+        .card h3 { margin-bottom: 15px; color: #27ae60; }
 
-/* ---------------- GLOBAL ---------------- */
+        /* --- About Section --- */
+        .about { background: #f0f4f8; }
+        .about-flex { display: flex; align-items: center; gap: 50px; flex-wrap: wrap; }
+        .about-text { flex: 1; min-width: 300px; }
+        .about-image { flex: 1; min-width: 300px; text-align: center; }
+        .about-image img { width: 100%; max-width: 400px; border-radius: 50% 5% 50% 5%; box-shadow: 20px 20px 0px #27ae60; }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+        /* --- Testimonial Section --- */
+        .testimonials { background: #2c3e50; color: white; text-align: center; }
+        .testimonials h2 { color: white; }
+        blockquote { font-style: italic; font-size: 1.4rem; max-width: 800px; margin: 0 auto; position: relative; }
 
-body {
-  font-family: 'Inter', sans-serif;
-  background: #ffffff;
-  color: #111;
-  line-height: 1.7;
-  scroll-behavior: smooth;
-}
-
-.container {
-  width: 90%;
-  max-width: 1100px;
-  margin: auto;
-}
-
-section {
-  padding: 110px 0;
-}
-
-h1, h2, h3 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 600;
-}
-
-h1 {
-  font-size: 3.4rem;
-  line-height: 1.15;
-}
-
-h2 {
-  font-size: 2.2rem;
-  margin-bottom: 20px;
-}
-
-p {
-  font-size: 1.05rem;
-  color: #444;
-}
-
-.highlight {
-  color: #8c6f4e;
-}
-
-.btn-primary {
-  display: inline-block;
-  padding: 15px 32px;
-  background: #111;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 40px;
-  font-weight: 500;
-  transition: 0.3s ease;
-}
-
-.btn-primary:hover {
-  background: #8c6f4e;
-}
-
-/* ---------------- NAVBAR ---------------- */
-
-nav {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  background: rgba(255,255,255,0.96);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid #eee;
-  z-index: 1000;
-}
-
-.nav-wrapper {
-  max-width: 1100px;
-  margin: auto;
-  padding: 20px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-weight: 600;
-  font-size: 1.05rem;
-  letter-spacing: 1px;
-}
-
-.nav-links {
-  display: flex;
-  gap: 35px;
-  list-style: none;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #111;
-  font-weight: 500;
-  font-size: 0.95rem;
-}
-
-.nav-links a:hover {
-  color: #8c6f4e;
-}
-
-/* ---------------- HERO ---------------- */
-
-.hero {
-  padding-top: 170px;
-  text-align: center;
-}
-
-.hero p {
-  margin: 25px auto 40px;
-  max-width: 600px;
-  font-size: 1.2rem;
-  color: #555;
-}
-
-/* ---------------- PROBLEM SECTION ---------------- */
-
-.problem {
-  background: #f8f6f2;
-  text-align: center;
-}
-
-.problem ul {
-  list-style: none;
-  margin-top: 30px;
-}
-
-.problem li {
-  margin: 12px 0;
-  font-size: 1.05rem;
-  color: #333;
-}
-
-/* ---------------- FRAMEWORK ---------------- */
-
-.framework-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 40px;
-  margin-top: 50px;
-}
-
-.framework-step {
-  padding: 30px;
-  border-left: 3px solid #8c6f4e;
-}
-
-.framework-step h3 {
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-}
-
-/* ---------------- ABOUT ---------------- */
-
-.about {
-  display: flex;
-  gap: 60px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.about img {
-  width: 320px;
-  border-radius: 12px;
-}
-
-.about-text {
-  flex: 1;
-}
-
-/* ---------------- TESTIMONIALS ---------------- */
-
-.testimonials {
-  background: #111;
-  color: white;
-  text-align: center;
-}
-
-.testimonial-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
-  margin-top: 50px;
-}
-
-.testimonial {
-  padding: 30px;
-  background: #1c1c1c;
-  border-radius: 10px;
-  font-size: 0.95rem;
-}
-
-.testimonial span {
-  display: block;
-  margin-top: 15px;
-  font-size: 0.85rem;
-  color: #bbb;
-}
-
-/* ---------------- AUTHORITY STRIP ---------------- */
-
-.authority {
-  text-align: center;
-  font-size: 0.9rem;
-  color: #777;
-  padding: 40px 0;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
-}
-
-/* ---------------- FINAL CTA ---------------- */
-
-.final-cta {
-  text-align: center;
-}
-
-.final-cta p {
-  margin-bottom: 30px;
-}
-
-/* ---------------- FOOTER ---------------- */
-
-footer {
-  text-align: center;
-  padding: 40px 0;
-  font-size: 0.85rem;
-  background: #f2f2f2;
-  color: #666;
-}
-
-/* ---------------- RESPONSIVE ---------------- */
-
-@media(max-width: 768px) {
-  h1 {
-    font-size: 2.4rem;
-  }
-
-  .about {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-</style>
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            section { padding: 50px 0; }
+        }
+    </style>
 </head>
 <body>
 
-<nav>
-  <div class="nav-wrapper">
-    <div class="logo">Muhib | Clarity Coaching</div>
-    <ul class="nav-links">
-      <li><a href="#framework">Framework</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Apply</a></li>
-    </ul>
-  </div>
-</nav>
+    <header class="hero">
+        <div class="container">
+            <h1>Find Your Clarity.</h1>
+            <p>I help people navigate life's fog and rediscover their inner happiness through personalized coaching.</p>
+            <a href="#contact" class="cta-button">Book Your Free Session</a>
+        </div>
+    </header>
 
-<section class="hero container">
-  <h1>Clarity is a strategic advantage.</h1>
-  <p>For leaders and professionals who are capable — but internally misaligned, mentally overloaded, or strategically uncertain.</p>
-  <a href="#contact" class="btn-primary">Book Your Clarity Call</a>
-</section>
+    <section class="services">
+        <div class="container">
+            <h2>How I Can Help You</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Focus</h3>
+                    <p>Identify what truly matters and filter out the noise of everyday life.</p>
+                </div>
+                <div class="card">
+                    <h3>Purpose</h3>
+                    <p>Align your daily actions with your core values and long-term goals.</p>
+                </div>
+                <div class="card">
+                    <h3>Happiness</h3>
+                    <p>Develop a mindset that finds joy in the journey, not just the destination.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="problem">
-  <div class="container">
-    <h2>If this resonates, this is for you.</h2>
-    <ul>
-      <li>You overthink important decisions.</li>
-      <li>You are successful, but internally unsettled.</li>
-      <li>You carry pressure silently.</li>
-      <li>You feel capable of more — but unclear about direction.</li>
-    </ul>
-  </div>
-</section>
+    <section class="about">
+        <div class="container">
+            <div class="about-flex">
+                <div class="about-image">
+                    <img src="https://via.placeholder.com/400x400" alt="Muhib - Clarity Coach">
+                </div>
+                <div class="about-text">
+                    <h2>Meet Your Coach</h2>
+                    <p>Hello! I'm Muhib. My mission is to guide you through transitions and help you build a life that feels authentic and energized.</p>
+                    <p>After years of studying human behavior and happiness, I've developed a framework that provides immediate clarity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="framework" class="container">
-  <h2>The Clarity Framework</h2>
-  <div class="framework-grid">
-    <div class="framework-step">
-      <h3>1. Disrupt Mental Noise</h3>
-      <p>Identify emotional distortions and reactive patterns clouding judgment.</p>
-    </div>
-    <div class="framework-step">
-      <h3>2. Cognitive Precision</h3>
-      <p>Replace overthinking with structured psychological accuracy.</p>
-    </div>
-    <div class="framework-step">
-      <h3>3. Identity Realignment</h3>
-      <p>Clarify who you are becoming — not just what you are doing.</p>
-    </div>
-    <div class="framework-step">
-      <h3>4. Strategic Action</h3>
-      <p>Move decisively with internal congruence and emotional stability.</p>
-    </div>
-  </div>
-</section>
+    <section class="testimonials">
+        <div class="container">
+            <h2>What People Say</h2>
+            <br>
+            <blockquote>
+                "Working with Muhib changed the way I look at my career and my personal peace. I finally feel like I'm in the driver's seat."
+                <br><br>
+                <cite>— Sarah J., Entrepreneur</cite>
+            </blockquote>
+        </div>
+    </section>
 
-<section id="about" class="container about">
-  <img src="your-headshot.jpg" alt="Muhib Headshot">
-  <div class="about-text">
-    <h2>About Muhib</h2>
-    <p>Master NLP & CBT Certified Coach specializing in stress, anxiety, leadership clarity, and identity restructuring.</p>
-    <p>This is not motivational speaking. This is structured psychological intervention designed for high-functioning individuals.</p>
-  </div>
-</section>
-
-<section class="testimonials">
-  <div class="container">
-    <h2>Client Experiences</h2>
-    <div class="testimonial-grid">
-      <div class="testimonial">
-        “After 4 sessions, my thinking shifted from reactive to strategic. I now make decisions with confidence.”
-        <span>Senior Finance Director</span>
-      </div>
-      <div class="testimonial">
-        “I didn’t need motivation. I needed clarity. That’s what I got.”
-        <span>Tech Founder</span>
-      </div>
-      <div class="testimonial">
-        “This work is deep, structured, and transformative.”
-        <span>Regional Operations Lead</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="authority">
-  Certified NLP Practitioner • CBT-Based Coaching • Leadership Development • Emotional Intelligence Training
-</section>
-
-<section id="contact" class="final-cta container">
-  <h2>Book Your Clarity Call</h2>
-  <p>Select a time below.</p>
-
-  <div class="calendly-inline-widget"
-       data-url="https://calendly.com/muhibthehappinesscoach/discovery-session"
-       style="min-width:320px;height:700px;">
-  </div>
-</section>
-
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-
-<footer>
-  © 2026 Muhib The Happiness Coach | All Rights Reserved
-</footer>
+    <footer style="padding: 40px; text-align: center; background: #eee;">
+        <p>&copy; 2024 Clarity Coaching with Muhib. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
-
-
-
