@@ -68,18 +68,12 @@
         .framework-step h3 { color: #27ae60; margin-bottom: 15px; }
 
         /* --- Side-by-Side Flex Layouts --- */
-        .flex-row { 
-            display: flex; 
-            align-items: center; 
-            justify-content: space-between; 
-            gap: 60px; 
-        }
+       .flex-row { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+.flex-image { flex: 0 0 30%; text-align: center; }
+.flex-text { flex: 0 0 65%; }
+.book-cover img { width: 100%; max-width: 220px; border-radius: 8px; box-shadow: 15px 15px 40px rgba(0,0,0,0.15); }
+.about-image img { width: 100%; max-width: 320px; border-radius: 20px; box-shadow: 20px 20px 0 #f0f4f8; }
         
-        .flex-image { flex: 1; max-width: 40%; }
-        .flex-text { flex: 1.5; }
-
-        .book-cover img { width: 100%; max-width: 200px; border-radius: 8px; box-shadow: 15px 15px 40px rgba(0,0,0,0.15); }        .about-image img { width: 100%; max-width: 450px; border-radius: 20px; box-shadow: 20px 20px 0 #f0f4f8; }
-
         .testimonials { background: #2c3e50; color: white; text-align: center; }
         .testimonial-slide { display: none; animation: fadeIn 0.8s; }
         .testimonial-slide.active { display: block; }
@@ -87,16 +81,14 @@
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         /* --- FIXED RESPONSIVE DESIGN --- */
-        @media (max-width: 850px) {
-            .nav-content { padding: 0 10px; }
-            .nav-links a, .dropbtn { margin-left: 12px; font-size: 0.8rem; }
-            
-            .flex-row { flex-direction: column; text-align: center; gap: 30px; }
-            .flex-image { max-width: 80%; }
-            .flex-text { width: 100%; }
-            
-            .hero h1 { font-size: 2.2rem; }
-        }
+       @media (max-width: 850px) {
+.nav-content { padding: 0 10px; flex-wrap: nowrap; }
+.nav-links a, .dropbtn { margin-left: 10px; font-size: 0.75rem; }
+.flex-row { flex-direction: column !important; text-align: center; gap: 30px; }
+.flex-image { flex: 0 0 100%; max-width: 65%; margin: 0 auto; }
+.flex-text { flex: 0 0 100%; }
+.hero h1 { font-size: 2.2rem; }
+}
     </style>
 </head>
 <body>
@@ -170,7 +162,7 @@
     <section id="about">
         <div class="container flex-row">
             <div class="flex-image about-image">
-                <img src="https://via.placeholder.com/450x550" alt="Muhib Coach">
+                <img src="muhib.jpg" alt="Muhib Coach">
             </div>
             <div class="flex-text">
                 <h2>Meet <span class="highlight">Muhib</span></h2>
@@ -198,7 +190,7 @@
 
     <section style="text-align: center; background: #f0f4f8; padding: 100px 20px;">
         <div class="container">
-            <h2>Ready to reclaim your happiness?</h2>
+            <h2>Ready For a Change?</h2>
             <br>
             <button onclick="openCalendly()" class="cta-button">Check My Availability</button>
         </div>
@@ -225,5 +217,6 @@
     </script>
 </body>
 </html>
+
 
 
